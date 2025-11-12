@@ -1,0 +1,9 @@
+<h1>Question {{ current }} / {{ total }}</h1>
+<p>{{ question.question }}</p>
+<form method="post">{% csrf_token %}
+<input type="radio" name="answer" value="A"> {{ question.option.0 }}<br>
+<input type="radio" name="answer" value="B"> {{ question.option.1 }}<br>
+<input type="radio" name="answer" value="C"> {{ question.option.2 }}<br>
+<input type="radio" name="answer" value="D"> {{ question.option.3 }}<br>
+<button type="submit">Valider</button>
+</form>

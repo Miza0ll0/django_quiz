@@ -1,0 +1,182 @@
+[
+  {
+    "theme": "Informatique",
+    "text": "Quel langage est souvent utilisé pour structurer le contenu d'une page web ?",
+    "option_a": "Python",
+    "option_b": "C++",
+    "option_c": "HTML",
+    "option_d": "CSS",
+    "correct_answer": "C"
+  },
+  {
+    "theme": "Géographie",
+    "text": "Quelle est la capitale de l'Australie ?",
+    "option_a": "Sydney",
+    "option_b": "Melbourne",
+    "option_c": "Canberra",
+    "option_d": "Brisbane",
+    "correct_answer": "C"
+  },
+  {
+    "theme": "Arts",
+    "text": "Quel artiste a peint La Joconde (Mona Lisa) ?",
+    "option_a": "Vincent van Gogh",
+    "option_b": "Claude Monet",
+    "option_c": "Pablo Picasso",
+    "option_d": "Léonard de Vinci",
+    "correct_answer": "D"
+  },
+  {
+    "theme": "Sciences",
+    "text": "Quelle planète est surnommée la 'Planète Rouge' ?",
+    "option_a": "Jupiter",
+    "option_b": "Mars",
+    "option_c": "Vénus",
+    "option_d": "Saturne",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Littérature",
+    "text": "Qui est l'auteur de la pièce de théâtre 'Roméo et Juliette' ?",
+    "option_a": "Molière",
+    "option_b": "Victor Hugo",
+    "option_c": "William Shakespeare",
+    "option_d": "Jean Racine",
+    "correct_answer": "C"
+  },
+  {
+    "theme": "Mathématiques",
+    "text": "Combien de côtés a un heptagone ?",
+    "option_a": "6",
+    "option_b": "7",
+    "option_c": "8",
+    "option_d": "9",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Histoire",
+    "text": "Quel événement est généralement considéré comme le début de la Seconde Guerre mondiale ?",
+    "option_a": "L'attaque de Pearl Harbor",
+    "option_b": "L'invasion de la Pologne",
+    "option_c": "La chute de Berlin",
+    "option_d": "L'armistice de 1918",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Sports",
+    "text": "Quel pays a remporté le plus grand nombre de Coupes du Monde de la FIFA (masculin) ?",
+    "option_a": "Allemagne",
+    "option_b": "Italie",
+    "option_c": "Brésil",
+    "option_d": "Argentine",
+    "correct_answer": "C"
+  },
+  {
+    "theme": "Informatique",
+    "text": "Quelle est l'unité de mesure standard de la fréquence du processeur ?",
+    "option_a": "Volt",
+    "option_b": "Ampère",
+    "option_c": "Hertz",
+    "option_d": "Watt",
+    "correct_answer": "C"
+  },
+  {
+    "theme": "Géographie",
+    "text": "Quel est le plus long fleuve du monde ?",
+    "option_a": "Le Yangtsé",
+    "option_b": "L'Amazone",
+    "option_c": "Le Nil",
+    "option_d": "Le Mississippi",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Biologie",
+    "text": "Quelle est la principale fonction de l'hémoglobine dans le sang ?",
+    "option_a": "Défense immunitaire",
+    "option_b": "Transport de l'oxygène",
+    "option_c": "Coagulation du sang",
+    "option_d": "Production d'anticorps",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Philosophie",
+    "text": "Qui a formulé la célèbre phrase 'Je pense, donc je suis' ?",
+    "option_a": "Platon",
+    "option_b": "Descartes",
+    "option_c": "Sartre",
+    "option_d": "Kant",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Culture Générale",
+    "text": "Quel est le nom de l'alphabet utilisé pour écrire le russe et d'autres langues slaves ?",
+    "option_a": "Latin",
+    "option_b": "Grec",
+    "option_c": "Cyrillique",
+    "option_d": "Hiéroglyphe",
+    "correct_answer": "C"
+  },
+  {
+    "theme": "Économie",
+    "text": "Que mesure le produit intérieur brut (PIB) d'un pays ?",
+    "option_a": "Le niveau de pauvreté",
+    "option_b": "La valeur totale des biens et services produits",
+    "option_c": "L'inflation annuelle",
+    "option_d": "La dette publique",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Histoire Antique",
+    "text": "Quel empereur romain a légalisé le christianisme en 313 après J.-C. ?",
+    "option_a": "Néron",
+    "option_b": "Auguste",
+    "option_c": "Constantin Ier",
+    "option_d": "Dioclétien",
+    "correct_answer": "C"
+  },
+  {
+    "theme": "Mathématiques",
+    "text": "Quelle est la valeur de la constante mathématique 'e' (base du logarithme népérien) arrondie à deux décimales ?",
+    "option_a": "3,14",
+    "option_b": "2,72",
+    "option_c": "1,62",
+    "option_d": "0,58",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Géographie",
+    "text": "Quel désert est le plus grand du monde (en dehors des régions polaires) ?",
+    "option_a": "Le désert de Gobi",
+    "option_b": "Le désert du Kalahari",
+    "option_c": "Le désert du Sahara",
+    "option_d": "Le désert d'Arabie",
+    "correct_answer": "C"
+  },
+  {
+    "theme": "Musique",
+    "text": "Quel compositeur est l'auteur de 'La Neuvième Symphonie' et de 'Lettre à Élise' ?",
+    "option_a": "Wolfgang Amadeus Mozart",
+    "option_b": "Ludwig van Beethoven",
+    "option_c": "Jean-Sébastien Bach",
+    "option_d": "Frédéric Chopin",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Sciences - Physique",
+    "text": "Selon la loi d'Ohm, la tension (U) est égale au produit de quelle autre valeur par la résistance (R) ?",
+    "option_a": "La puissance (P)",
+    "option_b": "Le courant (I)",
+    "option_c": "La fréquence (f)",
+    "option_d": "L'énergie (E)",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Littérature",
+    "text": "De quel roman est tiré le personnage du Capitaine Achab, chasseur de baleines ?",
+    "option_a": "Vingt mille lieues sous les mers",
+    "option_b": "Moby Dick",
+    "option_c": "L'Île au trésor",
+    "option_d": "Le Vieil Homme et la Mer",
+    "correct_answer": "B"
+  }
+]

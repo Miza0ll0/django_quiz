@@ -1,0 +1,10 @@
+<form method="post">
+    {% csrf_token %}
+    <select name="theme">
+        {% for theme in themes %}
+            <option value="{{ theme.id }}">{{ theme.name }}</option>
+        {% endfor %}
+        <option value="custom">Thème personnalisé</option>
+    </select>
+    <button type="submit">Commencer</button>
+</form>

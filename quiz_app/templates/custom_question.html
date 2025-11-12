@@ -1,0 +1,6 @@
+<h1>Créer vos propres questions</h1>
+<form method="post">{% csrf_token %}
+{{ form.as_p }}
+<button type="submit">Ajouter et démarrer le quiz</button>
+</form>
+
