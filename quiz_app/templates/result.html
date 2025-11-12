@@ -1,3 +1,71 @@
-<h1>Quiz terminé !</h1>
-<p>Votre score : {{ score }}/{{ total }}</p>
-<a href="/">Recommencer</a>
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Résultat Quiz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'quiz_app/style.css' %}">
+    <style>
+        .result-container {
+            background: #232526;
+            border-radius: 18px;
+            box-shadow: 0 6px 32px rgba(0,0,0,0.25);
+            max-width: 420px;
+            margin: 60px auto;
+            padding: 2.5rem 2rem;
+            color: #f5f6fa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .result-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.5px;
+            text-align: center;
+        }
+        .result-score {
+            font-size: 1.3rem;
+            color: #e0e0e0;
+            margin-bottom: 1.2rem;
+            text-align: center;
+        }
+        .btn-restart {
+            background: linear-gradient(90deg, #444 0%, #222 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 0.8rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            margin-top: 1rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-restart:hover, .btn-restart:focus {
+            background: linear-gradient(90deg, #555 0%, #111 100%);
+            transform: translateY(-2px) scale(1.03);
+        }
+        @media (max-width: 500px) {
+            .result-container {
+                padding: 1.2rem 0.7rem;
+                max-width: 98vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <div class="result-title">Quiz terminé !</div>
+        <div class="result-score">Votre score : {{ score }}/{{ total }}</div>
+        <a href="/" class="btn-restart">Recommencer</a>
+    </div>
+</body>
+</html>

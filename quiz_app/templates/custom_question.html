@@ -1,6 +1,92 @@
-<h1>Créer vos propres questions</h1>
-<form method="post">{% csrf_token %}
-{{ form.as_p }}
-<button type="submit">Ajouter et démarrer le quiz</button>
-</form>
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Créer vos propres questions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'quiz_app/style.css' %}">
+    <style>
+        .custom-container {
+            background: #232526;
+            border-radius: 18px;
+            box-shadow: 0 6px 32px rgba(0,0,0,0.25);
+            max-width: 420px;
+            margin: 60px auto;
+            padding: 2.5rem 2rem;
+            color: #f5f6fa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .custom-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 1.2rem;
+            letter-spacing: 0.5px;
+            text-align: center;
+        }
+        .custom-form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .custom-form input,
+        .custom-form textarea,
+        .custom-form select {
+            background: #18191a;
+            color: #f5f6fa;
+            border: 1.5px solid #444;
+            border-radius: 8px;
+            padding: 0.7rem 1rem;
+            font-size: 1rem;
+            outline: none;
+            transition: border 0.2s;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .custom-form input:focus,
+        .custom-form textarea:focus,
+        .custom-form select:focus {
+            border-color: #fff;
+        }
+        .btn-custom {
+            background: linear-gradient(90deg, #444 0%, #222 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 0.8rem 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            margin-top: 1rem;
+        }
+        .btn-custom:hover, .btn-custom:focus {
+            background: linear-gradient(90deg, #555 0%, #111 100%);
+            transform: translateY(-2px) scale(1.03);
+        }
+        @media (max-width: 500px) {
+            .custom-container {
+                padding: 1.2rem 0.7rem;
+                max-width: 98vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="custom-container">
+        <div class="custom-title">Créer vos propres questions</div>
+        <form method="post" class="custom-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn-custom">Ajouter et démarrer le quiz</button>
+        </form>
+    </div>
+</body>
+</html>
 

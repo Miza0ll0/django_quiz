@@ -1,9 +1,114 @@
-<h1>Question {{ current }} / {{ total }}</h1>
-<p>{{ question.question }}</p>
-<form method="post">{% csrf_token %}
-<input type="radio" name="answer" value="A"> {{ question.option.0 }}<br>
-<input type="radio" name="answer" value="B"> {{ question.option.1 }}<br>
-<input type="radio" name="answer" value="C"> {{ question.option.2 }}<br>
-<input type="radio" name="answer" value="D"> {{ question.option.3 }}<br>
-<button type="submit">Valider</button>
-</form>
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'quiz_app/style.css' %}">
+    <style>
+        .quiz-container {
+            background: #232526;
+            border-radius: 18px;
+            box-shadow: 0 6px 32px rgba(0,0,0,0.25);
+            max-width: 420px;
+            margin: 40px auto;
+            padding: 2.5rem 2rem;
+            color: #f5f6fa;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .quiz-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.5px;
+            text-align: center;
+        }
+        .quiz-question {
+            font-size: 1.1rem;
+            color: #e0e0e0;
+            margin-bottom: 1.2rem;
+            text-align: center;
+        }
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .quiz-option {
+            background: #18191a;
+            border: 1.5px solid #444;
+            border-radius: 8px;
+            padding: 0.7rem 1rem;
+            color: #f5f6fa;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: border 0.2s, background 0.2s;
+        }
+        .quiz-option:hover,
+        .quiz-option input:focus + span {
+            border-color: #fff;
+            background: #222326;
+        }
+        .quiz-option input[type="radio"] {
+            accent-color: #fff;
+            margin-right: 1rem;
+        }
+        .btn-valider {
+            background: linear-gradient(90deg, #444 0%, #222 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 0.8rem 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            margin-top: 1rem;
+        }
+        .btn-valider:hover, .btn-valider:focus {
+            background: linear-gradient(90deg, #555 0%, #111 100%);
+            transform: translateY(-2px) scale(1.03);
+        }
+        @media (max-width: 500px) {
+            .quiz-container {
+                padding: 1.2rem 0.7rem;
+                max-width: 98vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <div class="quiz-title">Question {{ current }} / {{ total }}</div>
+        <div class="quiz-question">{{ question.question }}</div>
+        <form method="post" class="quiz-form">{% csrf_token %}
+            <div class="quiz-options">
+                <label class="quiz-option">
+                    <input type="radio" name="answer" value="A" required>
+                    <span>{{ question.option.0 }}</span>
+                </label>
+                <label class="quiz-option">
+                    <input type="radio" name="answer" value="B">
+                    <span>{{ question.option.1 }}</span>
+                </label>
+                <label class="quiz-option">
+                    <input type="radio" name="answer" value="C">
+                    <span>{{ question.option.2 }}</span>
+                </label>
+                <label class="quiz-option">
+                    <input type="radio" name="answer" value="D">
+                    <span>{{ question.option.3 }}</span>
+                </label>
+            </div>
+            <button type="submit" class="btn-valider">Valider</button>
+        </form>
+    </div>
+</body>
+</html>
