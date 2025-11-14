@@ -7,37 +7,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'quiz_app/style.css' %}">
     <style>
+        body {
+            background: linear-gradient(135deg, #18191a, #232526);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* Animation de fond */
+        .bubble {
+            position: absolute;
+            bottom: -100px;
+            width: 30px;
+            height: 30px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            animation: rise 18s infinite ease-in;
+        }
+        @keyframes rise {
+            0% { transform: translateY(0) scale(1); opacity: 0.3; }
+            50% { opacity: 0.7; }
+            100% { transform: translateY(-120vh) scale(1.5); opacity: 0; }
+        }
+
         .quiz-container {
             background: #232526;
             border-radius: 18px;
             box-shadow: 0 6px 32px rgba(0,0,0,0.25);
             max-width: 420px;
-            margin: 40px auto;
             padding: 2.5rem 2rem;
             color: #f5f6fa;
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
+            animation: fadeIn 1.2s ease-out;
+            position: relative;
+            z-index: 2;
         }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         .quiz-title {
             font-size: 1.3rem;
             font-weight: 600;
             color: #fff;
-            margin-bottom: 0.5rem;
-            letter-spacing: 0.5px;
             text-align: center;
+            animation: pulse 2s infinite;
         }
+        @keyframes pulse {
+            0%, 100% { color: #fff; }
+            50% { color: #00c6ff; }
+        }
+
         .quiz-question {
             font-size: 1.1rem;
             color: #e0e0e0;
-            margin-bottom: 1.2rem;
             text-align: center;
         }
+
         .quiz-options {
             display: flex;
             flex-direction: column;
             gap: 1rem;
         }
+
         .quiz-option {
             background: #18191a;
             border: 1.5px solid #444;
@@ -48,17 +88,20 @@
             display: flex;
             align-items: center;
             cursor: pointer;
-            transition: border 0.2s, background 0.2s;
+            transition: border 0.3s, background 0.3s, transform 0.2s;
         }
-        .quiz-option:hover,
-        .quiz-option input:focus + span {
-            border-color: #fff;
+
+        .quiz-option:hover {
+            border-color: #00c6ff;
             background: #222326;
+            transform: scale(1.05);
         }
+
         .quiz-option input[type="radio"] {
-            accent-color: #fff;
+            accent-color: #00c6ff;
             margin-right: 1rem;
         }
+
         .btn-valider {
             background: linear-gradient(90deg, #444 0%, #222 100%);
             color: #fff;
@@ -69,13 +112,16 @@
             font-weight: 600;
             letter-spacing: 1px;
             cursor: pointer;
-            transition: background 0.2s, transform 0.1s;
+            transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
             margin-top: 1rem;
         }
-        .btn-valider:hover, .btn-valider:focus {
-            background: linear-gradient(90deg, #555 0%, #111 100%);
-            transform: translateY(-2px) scale(1.03);
+
+        .btn-valider:hover {
+            background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 198, 255, 0.4);
         }
+
         @media (max-width: 500px) {
             .quiz-container {
                 padding: 1.2rem 0.7rem;
@@ -85,6 +131,13 @@
     </style>
 </head>
 <body>
+    <!-- Bulles animées -->
+    <div class="bubble" style="left:10%; animation-delay:0s;"></div>
+    <div class="bubble" style="left:30%; animation-delay:3s;"></div>
+    <div class="bubble" style="left:50%; animation-delay:6s;"></div>
+    <div class="bubble" style="left:70%; animation-delay:9s;"></div>
+    <div class="bubble" style="left:90%; animation-delay:12s;"></div>
+
     <div class="quiz-container">
         <div class="quiz-title">Question {{ current }} / {{ total }}</div>
         <div class="quiz-question">{{ question.question }}</div>
@@ -110,5 +163,38 @@
             <button type="submit" class="btn-valider">Valider</button>
         </form>
     </div>
+
+    <script>
+        // Animation au clic sur le bouton
+        const btn = document.querySelector('.btn-valider');
+        btn.addEventListener('click', () => {
+            btn.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                btn.style.transform = 'scale(1)';
+            }, 150);
+
+            // Confettis 🎉
+            for (let i = 0; i < 20; i++) {
+                const confetti = document.createElement('div');
+                confetti.textContent = "🎉";
+                confetti.style.position = 'fixed';
+                confetti.style.left = Math.random() * window.innerWidth + 'px';
+                confetti.style.top = '-20px';
+                confetti.style.fontSize = '24px';
+                confetti.style.animation = `fall ${2 + Math.random()*3}s linear forwards`;
+                document.body.appendChild(confetti);
+                setTimeout(() => confetti.remove(), 5000);
+            }
+        });
+
+        // Animation de chute des confettis
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes fall {
+                to { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
 </body>
 </html>

@@ -1,182 +1,921 @@
 [
+
   {
     "theme": "Informatique",
-    "text": "Quel langage est souvent utilisé pour structurer le contenu d'une page web ?",
+    "text": "Quel langage est utilisé pour styliser les pages web ?",
     "option_a": "Python",
-    "option_b": "C++",
+    "option_b": "CSS",
     "option_c": "HTML",
-    "option_d": "CSS",
+    "option_d": "Java",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Informatique",
+    "text": "Quel protocole sécurise les communications sur Internet ?",
+    "option_a": "HTTP",
+    "option_b": "HTTPS",
+    "option_c": "FTP",
+    "option_d": "SMTP",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Informatique",
+    "text": "Quel type de mémoire est volatile ?",
+    "option_a": "RAM",
+    "option_b": "ROM",
+    "option_c": "SSD",
+    "option_d": "HDD",
+    "correct_answer": "A"
+  },
+  {
+    "theme": "Informatique",
+    "text": "Quel système d'exploitation est open source ?",
+    "option_a": "Windows",
+    "option_b": "macOS",
+    "option_c": "Linux",
+    "option_d": "iOS",
+    "correct_answer": "C"
+  },
+  {
+    "theme": "Informatique",
+    "text": "Quel langage est le plus utilisé pour l'intelligence artificielle ?",
+    "option_a": "Python",
+    "option_b": "C",
+    "option_c": "HTML",
+    "option_d": "Ruby",
+    "correct_answer": "A"
+  },
+  {
+    "theme": "Informatique",
+    "text": "Quel composant exécute les instructions dans un ordinateur ?",
+    "option_a": "RAM",
+    "option_b": "CPU",
+    "option_c": "GPU",
+    "option_d": "Disque dur",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Informatique",
+    "text": "Quelle unité mesure la fréquence d’un processeur ?",
+    "option_a": "Volt",
+    "option_b": "Hertz",
+    "option_c": "Watt",
+    "option_d": "Ampère",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Informatique",
+    "text": "Quel langage permet de créer des pages web dynamiques côté client ?",
+    "option_a": "CSS",
+    "option_b": "JavaScript",
+    "option_c": "PHP",
+    "option_d": "SQL",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Informatique",
+    "text": "Que signifie l’acronyme 'URL' ?",
+    "option_a": "Unified Resource Link",
+    "option_b": "Unified Reference Locator",
+    "option_c": "Uniform Resource Locator",
+    "option_d": "Universal Reference Link",
+    "correct_answer": "C"
+  },
+  {
+    "theme": "Informatique",
+    "text": "Quel protocole est utilisé pour le transfert de fichiers ?",
+    "option_a": "FTP",
+    "option_b": "SMTP",
+    "option_c": "IMAP",
+    "option_d": "SSH",
+    "correct_answer": "A"
+  },
+
+  {
+    "theme": "Géographie",
+    "text": "Quelle est la capitale de la France ?",
+    "option_a": "Lyon",
+    "option_b": "Marseille",
+    "option_c": "Paris",
+    "option_d": "Toulouse",
     "correct_answer": "C"
   },
   {
     "theme": "Géographie",
-    "text": "Quelle est la capitale de l'Australie ?",
-    "option_a": "Sydney",
-    "option_b": "Melbourne",
-    "option_c": "Canberra",
-    "option_d": "Brisbane",
-    "correct_answer": "C"
-  },
-  {
-    "theme": "Arts",
-    "text": "Quel artiste a peint La Joconde (Mona Lisa) ?",
-    "option_a": "Vincent van Gogh",
-    "option_b": "Claude Monet",
-    "option_c": "Pablo Picasso",
-    "option_d": "Léonard de Vinci",
-    "correct_answer": "D"
-  },
-  {
-    "theme": "Sciences",
-    "text": "Quelle planète est surnommée la 'Planète Rouge' ?",
-    "option_a": "Jupiter",
-    "option_b": "Mars",
-    "option_c": "Vénus",
-    "option_d": "Saturne",
+    "text": "Quel est le plus long fleuve du monde ?",
+    "option_a": "Nil",
+    "option_b": "Amazone",
+    "option_c": "Yangtsé",
+    "option_d": "Mississippi",
     "correct_answer": "B"
   },
   {
-    "theme": "Littérature",
-    "text": "Qui est l'auteur de la pièce de théâtre 'Roméo et Juliette' ?",
-    "option_a": "Molière",
-    "option_b": "Victor Hugo",
-    "option_c": "William Shakespeare",
-    "option_d": "Jean Racine",
+    "theme": "Géographie",
+    "text": "Quel est le plus grand continent ?",
+    "option_a": "Afrique",
+    "option_b": "Asie",
+    "option_c": "Europe",
+    "option_d": "Amérique",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Géographie",
+    "text": "Quel pays possède la plus grande population ?",
+    "option_a": "Chine",
+    "option_b": "Inde",
+    "option_c": "États-Unis",
+    "option_d": "Indonésie",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Géographie",
+    "text": "Quel est le plus grand désert chaud du monde ?",
+    "option_a": "Gobi",
+    "option_b": "Sahara",
+    "option_c": "Atacama",
+    "option_d": "Arabie",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Géographie",
+    "text": "Quel océan borde l'est de l'Afrique ?",
+    "option_a": "Atlantique",
+    "option_b": "Arctique",
+    "option_c": "Pacifique",
+    "option_d": "Indien",
+    "correct_answer": "D"
+  },
+  {
+    "theme": "Géographie",
+    "text": "Quelle montagne est la plus haute du monde ?",
+    "option_a": "Mont Blanc",
+    "option_b": "Mont Everest",
+    "option_c": "K2",
+    "option_d": "Kilimandjaro",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Géographie",
+    "text": "Quel pays est surnommé le 'Pays du Soleil-Levant' ?",
+    "option_a": "Chine",
+    "option_b": "Japon",
+    "option_c": "Corée",
+    "option_d": "Thaïlande",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Géographie",
+    "text": "Quelle est la capitale du Canada ?",
+    "option_a": "Toronto",
+    "option_b": "Ottawa",
+    "option_c": "Montréal",
+    "option_d": "Vancouver",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Géographie",
+    "text": "Quel est le plus grand lac d'Amérique du Nord ?",
+    "option_a": "Lac Michigan",
+    "option_b": "Lac Supérieur",
+    "option_c": "Lac Ontario",
+    "option_d": "Lac Huron",
+    "correct_answer": "B"
+  },
+
+  {
+    "theme": "Sciences",
+    "text": "Quelle planète est surnommée la planète rouge ?",
+    "option_a": "Mars",
+    "option_b": "Vénus",
+    "option_c": "Mercure",
+    "option_d": "Jupiter",
+    "correct_answer": "A"
+  },
+  {
+    "theme": "Sciences",
+    "text": "Quel gaz est essentiel pour la respiration humaine ?",
+    "option_a": "Oxygène",
+    "option_b": "Azote",
+    "option_c": "Hydrogène",
+    "option_d": "Hélium",
+    "correct_answer": "A"
+  },
+  {
+    "theme": "Sciences",
+    "text": "Quel est le symbole chimique du carbone ?",
+    "option_a": "Ca",
+    "option_b": "C",
+    "option_c": "Co",
+    "option_d": "Cb",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Sciences",
+    "text": "Quelle est la vitesse de la lumière ?",
+    "option_a": "3 000 km/s",
+    "option_b": "30 000 km/s",
+    "option_c": "300 000 km/s",
+    "option_d": "3 000 000 km/s",
+    "correct_answer": "C"
+  },
+  {
+    "theme": "Sciences",
+    "text": "Quel organe filtre le sang ?",
+    "option_a": "Cœur",
+    "option_b": "Foie",
+    "option_c": "Reins",
+    "option_d": "Poumons",
+    "correct_answer": "C"
+  },
+  {
+    "theme": "Sciences",
+    "text": "Quel est l'état de la matière qui n'a ni forme ni volume propre ?",
+    "option_a": "Solide",
+    "option_b": "Liquide",
+    "option_c": "Gaz",
+    "option_d": "Plasma",
+    "correct_answer": "C"
+  },
+  {
+    "theme": "Sciences",
+    "text": "Quel instrument mesure la pression atmosphérique ?",
+    "option_a": "Thermomètre",
+    "option_b": "Anémomètre",
+    "option_c": "Baromètre",
+    "option_d": "Hygromètre",
+    "correct_answer": "C"
+  },
+  {
+    "theme": "Sciences",
+    "text": "Comment appelle-t-on la force qui attire les objets vers le sol ?",
+    "option_a": "Magnétisme",
+    "option_b": "Gravité",
+    "option_c": "Frottement",
+    "option_d": "Inertie",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Sciences",
+    "text": "Quelle étoile est au centre de notre système solaire ?",
+    "option_a": "Sirius",
+    "option_b": "Alpha Centauri",
+    "option_c": "Soleil",
+    "option_d": "Polaris",
+    "correct_answer": "C"
+  },
+  {
+    "theme": "Sciences",
+    "text": "Quel est le symbole de l'eau ?",
+    "option_a": "HO",
+    "option_b": "H2O",
+    "option_c": "O2H",
+    "option_d": "OH2",
+    "correct_answer": "B"
+  },
+
+
+  {
+    "theme": "Mathématiques",
+    "text": "Combien de côtés a un hexagone ?",
+    "option_a": "5",
+    "option_b": "6",
+    "option_c": "7",
+    "option_d": "8",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Mathématiques",
+    "text": "Quelle est la valeur arrondie de π ?",
+    "option_a": "3,14",
+    "option_b": "2,72",
+    "option_c": "1,62",
+    "option_d": "4,14",
+    "correct_answer": "A"
+  },
+  {
+    "theme": "Mathématiques",
+    "text": "Combien font 12 × 12 ?",
+    "option_a": "124",
+    "option_b": "144",
+    "option_c": "132",
+    "option_d": "112",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Mathématiques",
+    "text": "Quelle est la racine carrée de 81 ?",
+    "option_a": "7",
+    "option_b": "8",
+    "option_c": "9",
+    "option_d": "10",
     "correct_answer": "C"
   },
   {
     "theme": "Mathématiques",
-    "text": "Combien de côtés a un heptagone ?",
-    "option_a": "6",
+    "text": "Quel est le résultat de 7 + 8 ?",
+    "option_a": "14",
+    "option_b": "15",
+    "option_c": "16",
+    "option_d": "17",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Mathématiques",
+    "text": "Quel est le périmètre d’un carré de côté 5 ?",
+    "option_a": "20",
+    "option_b": "15",
+    "option_c": "25",
+    "option_d": "10",
+    "correct_answer": "A"
+  },
+  {
+    "theme": "Mathématiques",
+    "text": "Quel est le résultat de 9 × 9 ?",
+    "option_a": "72",
+    "option_b": "81",
+    "option_c": "99",
+    "option_d": "90",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Mathématiques",
+    "text": "Combien de degrés possède un angle droit ?",
+    "option_a": "45°",
+    "option_b": "90°",
+    "option_c": "180°",
+    "option_d": "360°",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Mathématiques",
+    "text": "Quel est le résultat de 100 ÷ 4 ?",
+    "option_a": "20",
+    "option_b": "30",
+    "option_c": "25",
+    "option_d": "15",
+    "correct_answer": "C"
+  },
+  {
+    "theme": "Mathématiques",
+    "text": "Quel est le symbole d'une addition ?",
+    "option_a": "-",
+    "option_b": "+",
+    "option_c": "×",
+    "option_d": "÷",
+    "correct_answer": "B"
+  },
+
+  {
+    "theme": "Histoire",
+    "text": "Quel événement marque le début de la Seconde Guerre mondiale ?",
+    "option_a": "L'invasion de la Pologne",
+    "option_b": "La bataille de Stalingrad",
+    "option_c": "La chute de Berlin",
+    "option_d": "Le débarquement de Normandie",
+    "correct_answer": "A"
+  },
+  {
+    "theme": "Histoire",
+    "text": "En quelle année a eu lieu la Révolution française ?",
+    "option_a": "1789",
+    "option_b": "1795",
+    "option_c": "1804",
+    "option_d": "1776",
+    "correct_answer": "A"
+  },
+  {
+    "theme": "Histoire",
+    "text": "Qui a découvert l'Amérique en 1492 ?",
+    "option_a": "Vasco de Gama",
+    "option_b": "Christophe Colomb",
+    "option_c": "Marco Polo",
+    "option_d": "Magellan",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Histoire",
+    "text": "Quel empereur romain a légalisé le christianisme ?",
+    "option_a": "Néron",
+    "option_b": "Auguste",
+    "option_c": "Constantin Ier",
+    "option_d": "Trajan",
+    "correct_answer": "C"
+  },
+  {
+    "theme": "Histoire",
+    "text": "Quel mur est tombé en 1989 ?",
+    "option_a": "Mur de Chine",
+    "option_b": "Mur de Berlin",
+    "option_c": "Mur d'Hadrien",
+    "option_d": "Mur de Suez",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Histoire",
+    "text": "Qui était le premier président des États-Unis ?",
+    "option_a": "Abraham Lincoln",
+    "option_b": "George Washington",
+    "option_c": "John Adams",
+    "option_d": "Thomas Jefferson",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Histoire",
+    "text": "Qui a mené les Gaulois contre Rome ?",
+    "option_a": "Jules César",
+    "option_b": "Astérix",
+    "option_c": "Vercingétorix",
+    "option_d": "Charlemagne",
+    "correct_answer": "C"
+  },
+  {
+    "theme": "Histoire",
+    "text": "Quel pays a construit les pyramides ?",
+    "option_a": "Grèce",
+    "option_b": "Éthiopie",
+    "option_c": "Mexique",
+    "option_d": "Égypte",
+    "correct_answer": "D"
+  },
+  {
+    "theme": "Histoire",
+    "text": "À quel siècle appartient Napoléon Bonaparte ?",
+    "option_a": "XVIe",
+    "option_b": "XVIIe",
+    "option_c": "XVIIIe",
+    "option_d": "XIXe",
+    "correct_answer": "D"
+  },
+  {
+    "theme": "Histoire",
+    "text": "Qui a peint la Chapelle Sixtine ?",
+    "option_a": "Raphaël",
+    "option_b": "Michel-Ange",
+    "option_c": "Leonard de Vinci",
+    "option_d": "Donatello",
+    "correct_answer": "B"
+  },
+
+
+  {
+    "theme": "Littérature",
+    "text": "Qui a écrit 'Les Misérables' ?",
+    "option_a": "Victor Hugo",
+    "option_b": "Émile Zola",
+    "option_c": "Balzac",
+    "option_d": "Molière",
+    "correct_answer": "A"
+  },
+  {
+    "theme": "Littérature",
+    "text": "Qui a écrit 'Roméo et Juliette' ?",
+    "option_a": "Molière",
+    "option_b": "Victor Hugo",
+    "option_c": "William Shakespeare",
+    "option_d": "Érasme",
+    "correct_answer": "C"
+  },
+  {
+    "theme": "Littérature",
+    "text": "Qui est l'auteur de 'L'Odyssée' ?",
+    "option_a": "Homère",
+    "option_b": "Virgile",
+    "option_c": "Platon",
+    "option_d": "Sophocle",
+    "correct_answer": "A"
+  },
+  {
+    "theme": "Littérature",
+    "text": "Quel écrivain français a écrit 'Le Petit Prince' ?",
+    "option_a": "Antoine de Saint-Exupéry",
+    "option_b": "Jules Verne",
+    "option_c": "Albert Camus",
+    "option_d": "Romain Gary",
+    "correct_answer": "A"
+  },
+  {
+    "theme": "Littérature",
+    "text": "Qui a écrit '1984' ?",
+    "option_a": "George Orwell",
+    "option_b": "Aldous Huxley",
+    "option_c": "Ray Bradbury",
+    "option_d": "Philip K. Dick",
+    "correct_answer": "A"
+  },
+  {
+    "theme": "Littérature",
+    "text": "Qui a créé le personnage de Sherlock Holmes ?",
+    "option_a": "Conan Doyle",
+    "option_b": "Agatha Christie",
+    "option_c": "Jules Verne",
+    "option_d": "Oscar Wilde",
+    "correct_answer": "A"
+  },
+  {
+    "theme": "Littérature",
+    "text": "Quel roman met en scène un capitaine obsédé par une baleine blanche ?",
+    "option_a": "Moby Dick",
+    "option_b": "Le Vieil Homme et la Mer",
+    "option_c": "Vingt Mille Lieues sous les mers",
+    "option_d": "L'Île Mystérieuse",
+    "correct_answer": "A"
+  },
+  {
+    "theme": "Littérature",
+    "text": "Qui est l'auteur de 'L'Étranger' ?",
+    "option_a": "Albert Camus",
+    "option_b": "Jean-Paul Sartre",
+    "option_c": "Simone de Beauvoir",
+    "option_d": "Françoise Sagan",
+    "correct_answer": "A"
+  },
+  {
+    "theme": "Littérature",
+    "text": "À quel courant appartient Baudelaire ?",
+    "option_a": "Symbolisme",
+    "option_b": "Romantisme",
+    "option_c": "Naturalisme",
+    "option_d": "Réalisme",
+    "correct_answer": "A"
+  },
+  {
+    "theme": "Littérature",
+    "text": "Quel auteur a écrit 'Le Rouge et le Noir' ?",
+    "option_a": "Balzac",
+    "option_b": "Stendhal",
+    "option_c": "Flaubert",
+    "option_d": "Maupassant",
+    "correct_answer": "B"
+  },
+
+
+  {
+    "theme": "Biologie",
+    "text": "Quelle est la fonction principale de l'hémoglobine ?",
+    "option_a": "Transport de l’oxygène",
+    "option_b": "Défense immunitaire",
+    "option_c": "Digestión",
+    "option_d": "Distribution des hormones",
+    "correct_answer": "A"
+  },
+  {
+    "theme": "Biologie",
+    "text": "Quel organe pompe le sang dans le corps ?",
+    "option_a": "Poumons",
+    "option_b": "Cœur",
+    "option_c": "Estomac",
+    "option_d": "Reins",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Biologie",
+    "text": "Quel est l'organe principal du système nerveux ?",
+    "option_a": "Foie",
+    "option_b": "Cerveau",
+    "option_c": "Cœur",
+    "option_d": "Reins",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Biologie",
+    "text": "Où se situe l'ADN ?",
+    "option_a": "Dans les os",
+    "option_b": "Dans le noyau des cellules",
+    "option_c": "Dans le sang",
+    "option_d": "Dans la peau",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Biologie",
+    "text": "Quel type de sang peut donner à tous les autres groupes ?",
+    "option_a": "A",
+    "option_b": "B",
+    "option_c": "AB",
+    "option_d": "O-",
+    "correct_answer": "D"
+  },
+  {
+    "theme": "Biologie",
+    "text": "Quel organe est responsable de la vision ?",
+    "option_a": "Oreille",
+    "option_b": "Œil",
+    "option_c": "Nez",
+    "option_d": "Peau",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Biologie",
+    "text": "Quel est l'organe le plus grand du corps humain ?",
+    "option_a": "Poumons",
+    "option_b": "Peau",
+    "option_c": "Cerveau",
+    "option_d": "Foie",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Biologie",
+    "text": "Quel nutriment est utilisé comme principale source d'énergie ?",
+    "option_a": "Lipides",
+    "option_b": "Glucides",
+    "option_c": "Protéines",
+    "option_d": "Vitamines",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Biologie",
+    "text": "Quel est le principal gaz expiré lors de la respiration ?",
+    "option_a": "Oxygène",
+    "option_b": "Azote",
+    "option_c": "Dioxyde de carbone",
+    "option_d": "Hydrogène",
+    "correct_answer": "C"
+  },
+  {
+    "theme": "Biologie",
+    "text": "Quel est le groupe sanguin universel receveur ?",
+    "option_a": "AB+",
+    "option_b": "O+",
+    "option_c": "A-",
+    "option_d": "B+",
+    "correct_answer": "A"
+  },
+
+
+  {
+    "theme": "Philosophie",
+    "text": "Qui a dit « Je pense, donc je suis » ?",
+    "option_a": "Platon",
+    "option_b": "Descartes",
+    "option_c": "Kant",
+    "option_d": "Aristote",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Philosophie",
+    "text": "Quel philosophe est connu pour la théorie des Idées ?",
+    "option_a": "Platon",
+    "option_b": "Aristote",
+    "option_c": "Socrate",
+    "option_d": "Nietzsche",
+    "correct_answer": "A"
+  },
+  {
+    "theme": "Philosophie",
+    "text": "Qui a écrit « Ainsi parlait Zarathoustra » ?",
+    "option_a": "Kant",
+    "option_b": "Nietzsche",
+    "option_c": "Sartre",
+    "option_d": "Descartes",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Philosophie",
+    "text": "Qui est le fondateur du stoïcisme ?",
+    "option_a": "Épictète",
+    "option_b": "Sénèque",
+    "option_c": "Zénon de Citium",
+    "option_d": "Marc Aurèle",
+    "correct_answer": "C"
+  },
+  {
+    "theme": "Philosophie",
+    "text": "Quel philosophe français a écrit « Le Mythe de Sisyphe » ?",
+    "option_a": "Sartre",
+    "option_b": "Camus",
+    "option_c": "Bergson",
+    "option_d": "Voltaire",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Philosophie",
+    "text": "Qui est considéré comme le père de la logique ?",
+    "option_a": "Aristote",
+    "option_b": "Platon",
+    "option_c": "Descartes",
+    "option_d": "Kant",
+    "correct_answer": "A"
+  },
+  {
+    "theme": "Philosophie",
+    "text": "Quel philosophe est l'auteur de 'Le Contrat social' ?",
+    "option_a": "Voltaire",
+    "option_b": "Rousseau",
+    "option_c": "Montaigne",
+    "option_d": "Descartes",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Philosophie",
+    "text": "Qui a enseigné Socrate ?",
+    "option_a": "Platon",
+    "option_b": "Anaxagore",
+    "option_c": "Pythagore",
+    "option_d": "Aucun, il était autodidacte",
+    "correct_answer": "D"
+  },
+  {
+    "theme": "Philosophie",
+    "text": "Qui a écrit « Critique de la raison pure » ?",
+    "option_a": "Descartes",
+    "option_b": "Hume",
+    "option_c": "Kant",
+    "option_d": "Leibniz",
+    "correct_answer": "C"
+  },
+  {
+    "theme": "Philosophie",
+    "text": "Qui a fondé l'Académie à Athènes ?",
+    "option_a": "Platon",
+    "option_b": "Aristote",
+    "option_c": "Socrate",
+    "option_d": "Héraclite",
+    "correct_answer": "A"
+  },
+
+
+  {
+    "theme": "Musique",
+    "text": "Qui a composé 'La Neuvième Symphonie' ?",
+    "option_a": "Mozart",
+    "option_b": "Beethoven",
+    "option_c": "Bach",
+    "option_d": "Chopin",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Musique",
+    "text": "Quel instrument possède 88 touches ?",
+    "option_a": "Guitare",
+    "option_b": "Violon",
+    "option_c": "Piano",
+    "option_d": "Harpe",
+    "correct_answer": "C"
+  },
+  {
+    "theme": "Musique",
+    "text": "Quel est l'instrument principal du jazz ?",
+    "option_a": "Flûte",
+    "option_b": "Saxophone",
+    "option_c": "Harpe",
+    "option_d": "Tambour",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Musique",
+    "text": "Quel chanteur est surnommé le 'Roi de la Pop' ?",
+    "option_a": "Prince",
+    "option_b": "Elvis Presley",
+    "option_c": "Michael Jackson",
+    "option_d": "Stevie Wonder",
+    "correct_answer": "C"
+  },
+  {
+    "theme": "Musique",
+    "text": "Quel compositeur a écrit 'Le Lac des cygnes' ?",
+    "option_a": "Mozart",
+    "option_b": "Bach",
+    "option_c": "Tchaïkovski",
+    "option_d": "Vivaldi",
+    "correct_answer": "C"
+  },
+  {
+    "theme": "Musique",
+    "text": "Quel groupe a chanté 'Bohemian Rhapsody' ?",
+    "option_a": "Queen",
+    "option_b": "The Beatles",
+    "option_c": "Nirvana",
+    "option_d": "Pink Floyd",
+    "correct_answer": "A"
+  },
+  {
+    "theme": "Musique",
+    "text": "Quel genre musical est originaire de la Jamaïque ?",
+    "option_a": "Rock",
+    "option_b": "Reggae",
+    "option_c": "Rap",
+    "option_d": "Blues",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Musique",
+    "text": "Quel est le symbole de la note musicale 'fa' ?",
+    "option_a": "Clef de sol",
+    "option_b": "Clef de fa",
+    "option_c": "Clef d'ut",
+    "option_d": "Clef de mi",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Musique",
+    "text": "Quel instrument appartient à la famille des cordes frottées ?",
+    "option_a": "Piano",
+    "option_b": "Violon",
+    "option_c": "Trompette",
+    "option_d": "Flûte",
+    "correct_answer": "B"
+  },
+  {
+    "theme": "Musique",
+    "text": "Quel artiste a chanté 'Shape of You' ?",
+    "option_a": "Ed Sheeran",
+    "option_b": "Bruno Mars",
+    "option_c": "Justin Bieber",
+    "option_d": "Shawn Mendes",
+    "correct_answer": "A"
+  },
+
+
+  {
+    "theme": "Culture Générale",
+    "text": "Quel est l’alphabet utilisé pour le russe ?",
+    "option_a": "Latin",
+    "option_b": "Grec",
+    "option_c": "Cyrillique",
+    "option_d": "Hiéroglyphes",
+    "correct_answer": "C"
+  },
+  {
+    "theme": "Culture Générale",
+    "text": "Combien de couleurs y a-t-il dans un arc-en-ciel ?",
+    "option_a": "5",
     "option_b": "7",
     "option_c": "8",
     "option_d": "9",
     "correct_answer": "B"
   },
   {
-    "theme": "Histoire",
-    "text": "Quel événement est généralement considéré comme le début de la Seconde Guerre mondiale ?",
-    "option_a": "L'attaque de Pearl Harbor",
-    "option_b": "L'invasion de la Pologne",
-    "option_c": "La chute de Berlin",
-    "option_d": "L'armistice de 1918",
-    "correct_answer": "B"
-  },
-  {
-    "theme": "Sports",
-    "text": "Quel pays a remporté le plus grand nombre de Coupes du Monde de la FIFA (masculin) ?",
-    "option_a": "Allemagne",
-    "option_b": "Italie",
-    "option_c": "Brésil",
-    "option_d": "Argentine",
+    "theme": "Culture Générale",
+    "text": "Quelle est la langue la plus parlée au monde ?",
+    "option_a": "Anglais",
+    "option_b": "Espagnol",
+    "option_c": "Chinois mandarin",
+    "option_d": "Hindi",
     "correct_answer": "C"
-  },
-  {
-    "theme": "Informatique",
-    "text": "Quelle est l'unité de mesure standard de la fréquence du processeur ?",
-    "option_a": "Volt",
-    "option_b": "Ampère",
-    "option_c": "Hertz",
-    "option_d": "Watt",
-    "correct_answer": "C"
-  },
-  {
-    "theme": "Géographie",
-    "text": "Quel est le plus long fleuve du monde ?",
-    "option_a": "Le Yangtsé",
-    "option_b": "L'Amazone",
-    "option_c": "Le Nil",
-    "option_d": "Le Mississippi",
-    "correct_answer": "B"
-  },
-  {
-    "theme": "Biologie",
-    "text": "Quelle est la principale fonction de l'hémoglobine dans le sang ?",
-    "option_a": "Défense immunitaire",
-    "option_b": "Transport de l'oxygène",
-    "option_c": "Coagulation du sang",
-    "option_d": "Production d'anticorps",
-    "correct_answer": "B"
-  },
-  {
-    "theme": "Philosophie",
-    "text": "Qui a formulé la célèbre phrase 'Je pense, donc je suis' ?",
-    "option_a": "Platon",
-    "option_b": "Descartes",
-    "option_c": "Sartre",
-    "option_d": "Kant",
-    "correct_answer": "B"
   },
   {
     "theme": "Culture Générale",
-    "text": "Quel est le nom de l'alphabet utilisé pour écrire le russe et d'autres langues slaves ?",
-    "option_a": "Latin",
-    "option_b": "Grec",
-    "option_c": "Cyrillique",
-    "option_d": "Hiéroglyphe",
+    "text": "Quelle est la boisson la plus consommée au monde après l'eau ?",
+    "option_a": "Vin",
+    "option_b": "Café",
+    "option_c": "Thé",
+    "option_d": "Soda",
     "correct_answer": "C"
   },
   {
-    "theme": "Économie",
-    "text": "Que mesure le produit intérieur brut (PIB) d'un pays ?",
-    "option_a": "Le niveau de pauvreté",
-    "option_b": "La valeur totale des biens et services produits",
-    "option_c": "L'inflation annuelle",
-    "option_d": "La dette publique",
-    "correct_answer": "B"
-  },
-  {
-    "theme": "Histoire Antique",
-    "text": "Quel empereur romain a légalisé le christianisme en 313 après J.-C. ?",
-    "option_a": "Néron",
-    "option_b": "Auguste",
-    "option_c": "Constantin Ier",
-    "option_d": "Dioclétien",
+    "theme": "Culture Générale",
+    "text": "Quel est l'animal le plus rapide du monde ?",
+    "option_a": "Guépard",
+    "option_b": "Aigle",
+    "option_c": "Faucon pèlerin",
+    "option_d": "Antilope",
     "correct_answer": "C"
   },
   {
-    "theme": "Mathématiques",
-    "text": "Quelle est la valeur de la constante mathématique 'e' (base du logarithme népérien) arrondie à deux décimales ?",
-    "option_a": "3,14",
-    "option_b": "2,72",
-    "option_c": "1,62",
-    "option_d": "0,58",
-    "correct_answer": "B"
-  },
-  {
-    "theme": "Géographie",
-    "text": "Quel désert est le plus grand du monde (en dehors des régions polaires) ?",
-    "option_a": "Le désert de Gobi",
-    "option_b": "Le désert du Kalahari",
-    "option_c": "Le désert du Sahara",
-    "option_d": "Le désert d'Arabie",
+    "theme": "Culture Générale",
+    "text": "Quelle est la capitale du cinéma américain ?",
+    "option_a": "Las Vegas",
+    "option_b": "New York",
+    "option_c": "Hollywood",
+    "option_d": "San Francisco",
     "correct_answer": "C"
   },
   {
-    "theme": "Musique",
-    "text": "Quel compositeur est l'auteur de 'La Neuvième Symphonie' et de 'Lettre à Élise' ?",
-    "option_a": "Wolfgang Amadeus Mozart",
-    "option_b": "Ludwig van Beethoven",
-    "option_c": "Jean-Sébastien Bach",
-    "option_d": "Frédéric Chopin",
-    "correct_answer": "B"
+    "theme": "Culture Générale",
+    "text": "À quelle température l'eau bout-elle ?",
+    "option_a": "50°C",
+    "option_b": "75°C",
+    "option_c": "100°C",
+    "option_d": "150°C",
+    "correct_answer": "C"
   },
   {
-    "theme": "Sciences - Physique",
-    "text": "Selon la loi d'Ohm, la tension (U) est égale au produit de quelle autre valeur par la résistance (R) ?",
-    "option_a": "La puissance (P)",
-    "option_b": "Le courant (I)",
-    "option_c": "La fréquence (f)",
-    "option_d": "L'énergie (E)",
-    "correct_answer": "B"
+    "theme": "Culture Générale",
+    "text": "Quel fruit est le plus consommé au monde ?",
+    "option_a": "Banane",
+    "option_b": "Pomme",
+    "option_c": "Mangue",
+    "option_d": "Orange",
+    "correct_answer": "A"
   },
   {
-    "theme": "Littérature",
-    "text": "De quel roman est tiré le personnage du Capitaine Achab, chasseur de baleines ?",
-    "option_a": "Vingt mille lieues sous les mers",
-    "option_b": "Moby Dick",
-    "option_c": "L'Île au trésor",
-    "option_d": "Le Vieil Homme et la Mer",
+    "theme": "Culture Générale",
+    "text": "Quel pays a inventé les Jeux olympiques modernes ?",
+    "option_a": "France",
+    "option_b": "Grèce",
+    "option_c": "Belgique",
+    "option_d": "États-Unis",
+    "correct_answer": "A"
+  },
+  {
+    "theme": "Culture Générale",
+    "text": "Quel est le plus grand mammifère du monde ?",
+    "option_a": "Éléphant",
+    "option_b": "Baleine bleue",
+    "option_c": "Girafe",
+    "option_d": "Orque",
     "correct_answer": "B"
   }
 ]
+
+
+

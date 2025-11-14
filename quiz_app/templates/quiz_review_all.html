@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Toutes les questions du quiz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'quiz_app/style.css' %}">
+    <style>
+        body {
+            background: linear-gradient(135deg, #18191a, #232526);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 40px 16px;
+            color: #f5f6fa;
+        }
+
+        .review-container {
+            background: #232526;
+            border-radius: 18px;
+            box-shadow: 0 6px 32px rgba(0,0,0,0.25);
+            max-width: 780px;
+            width: 100%;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            animation: fadeIn 0.8s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .review-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .question-block {
+            background: #1b1c1d;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 1rem;
+        }
+        .question-text {
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+        }
+        .choices {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.5rem;
+        }
+        .choice {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: #161718;
+            border: 1px solid #2f2f2f;
+            border-radius: 10px;
+            padding: 0.6rem 0.8rem;
+        }
+        .badge {
+            font-size: 0.8rem;
+            background: #2a2b2c;
+            color: #9aa0a6;
+            padding: 0.1rem 0.5rem;
+            border-radius: 6px;
+        }
+        .selected { border-color: #ff6b6b; background: #251b1b; }
+        .correct { border-color: #3ddc97; background: #18241e; }
+
+        .actions {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .btn {
+            background: linear-gradient(90deg, #444 0%, #222 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 0.7rem 1.1rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 198, 255, 0.35);
+        }
+
+        @media (min-width: 640px) {
+            .choices { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="review-container">
+        <div class="review-title">Revue complète du quiz</div>
+
+        {% if results %}
+            {% for item in results %}
+            <div class="question-block">
+                <div class="question-text">{{ forloop.counter }}. {{ item.question }}</div>
+                <div class="choices">
+                    <div class="choice {% if item.selected == 'A' %}selected{% endif %} {% if item.correct == 'A' %}correct{% endif %}">
+                        <span class="badge">A</span> <span>{{ item.options.0 }}</span>
+                    </div>
+                    <div class="choice {% if item.selected == 'B' %}selected{% endif %} {% if item.correct == 'B' %}correct{% endif %}">
+                        <span class="badge">B</span> <span>{{ item.options.1 }}</span>
+                    </div>
+                    <div class="choice {% if item.selected == 'C' %}selected{% endif %} {% if item.correct == 'C' %}correct{% endif %}">
+                        <span class="badge">C</span> <span>{{ item.options.2 }}</span>
+                    </div>
+                    <div class="choice {% if item.selected == 'D' %}selected{% endif %} {% if item.correct == 'D' %}correct{% endif %}">
+                        <span class="badge">D</span> <span>{{ item.options.3 }}</span>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>Aucune donnée disponible pour ce quiz.</p>
+        {% endif %}
+
+        <div class="actions">
+            <a href="{% url 'restart_quiz' %}" class="btn">Recommencer</a>
+        </div>
+    </div>
+</body>
+</html>

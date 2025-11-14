@@ -6,6 +6,19 @@ import random
 # Stockage temporaire des questions personnalisées
 QUIZ_QUESTIONS = []
 
+def quiz_review_all(request):
+    # Récupérer les réponses de l'utilisateur depuis la session
+    results = request.session.get('user_answers', [])
+    score = request.session.get('score', 0)
+    total = len(request.session.get('questions', []))
+
+    return render(request, 'quiz_review_all.html', {
+        "results": results,
+        "score": score,
+        "total": total
+    })
+
+
 def home(request):
     themes = Theme.objects.all()  # récupérer tous les thèmes depuis la base
     error = None
@@ -26,7 +39,7 @@ def home(request):
                 error = "Ce thème n'a pas encore de questions."
             else:
                 # Sélection aléatoire de 3 questions (ou moins si le thème en a moins)
-                selected_questions = random.sample(questions, min(3, len(questions)))
+                selected_questions = random.sample(questions, min(10, len(questions)))
 
                 # Stocker les questions dans la session
                 request.session['questions'] = [
@@ -65,26 +78,45 @@ def custom_question(request):
     else:
         form = CustomQuestionForm()
     return render(request, 'custom_question.html', {'form': form})
-
 def quiz(request):
     questions = request.session.get('questions', [])
     current_index = request.session.get('current_question', 0)
     score = request.session.get('score', 0)
+    user_answers = request.session.get('user_answers', [])  # 🔹 récupérer les réponses déjà stockées
 
     if current_index >= len(questions):
         # reset session pour permettre de refaire le quiz
         request.session['current_question'] = 0
         request.session['score'] = 0
-        return render(request, 'result.html', {"score": score, "total": len(questions)})
+
+        return render(request, 'result.html', {
+            "score": score,
+            "total": len(questions),
+            "results": user_answers   # 🔹 envoyer les réponses au template résultat
+        })
 
     question = questions[current_index]
 
     if request.method == "POST":
         answer = request.POST.get("answer")
+
+        # Vérifier la réponse
         if answer == question["correct_answer"]:
             score += 1
+
+        # 🔹 Sauvegarder la réponse donnée et la bonne réponse
+        user_answers.append({
+            "question": question["question"],
+            "options": question["option"],   # liste des 4 options
+            "selected": answer,              # lettre "A"/"B"/"C"/"D"
+            "correct": question["correct_answer"]  # lettre "A"/"B"/"C"/"D"
+        })
+
+        # 🔹 Mettre à jour la session
         request.session['score'] = score
         request.session['current_question'] = current_index + 1
+        request.session['user_answers'] = user_answers
+
         return redirect('quiz')
 
     return render(request, 'quiz.html', {
@@ -92,3 +124,14 @@ def quiz(request):
         "current": current_index + 1,
         "total": len(questions)
     })
+from django.shortcuts import render, redirect
+
+def restart_quiz(request):
+    # Supprimer toutes les données du quiz dans la session
+    request.session.pop('questions', None)
+    request.session.pop('score', None)
+    request.session.pop('current_question', None)
+    request.session.pop('user_answers', None)
+
+    # Rediriger vers la page d'accueil
+    return redirect('home')

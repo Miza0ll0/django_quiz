@@ -7,65 +7,155 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'quiz_app/style.css' %}">
     <style>
+        body {
+            background: linear-gradient(135deg, #18191a, #232526);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 40px 16px;
+            color: #f5f6fa;
+        }
+
         .result-container {
             background: #232526;
             border-radius: 18px;
             box-shadow: 0 6px 32px rgba(0,0,0,0.25);
-            max-width: 420px;
-            margin: 60px auto;
-            padding: 2.5rem 2rem;
-            color: #f5f6fa;
+            max-width: 780px;
+            width: 100%;
+            padding: 2rem;
             display: flex;
             flex-direction: column;
+            gap: 1.2rem;
+            animation: fadeIn 0.8s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 1.5rem;
+            gap: 1rem;
+            flex-wrap: wrap;
         }
         .result-title {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 700;
-            color: #fff;
-            margin-bottom: 0.5rem;
-            letter-spacing: 0.5px;
-            text-align: center;
         }
         .result-score {
-            font-size: 1.3rem;
-            color: #e0e0e0;
-            margin-bottom: 1.2rem;
-            text-align: center;
+            font-size: 1rem;
+            color: #cfd3d8;
         }
-        .btn-restart {
+
+        /* Progress bar */
+        .progress-bar { width: 100%; background: #18191a; border-radius: 10px; overflow: hidden; height: 14px; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #00c6ff, #0072ff); width: 0; transition: width 1s ease-out; }
+
+        /* Liste des erreurs */
+        .errors-title { margin-top: 8px; font-weight: 600; }
+        .error-item {
+            background: #1b1c1d;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 1rem;
+            margin-top: 0.8rem;
+        }
+        .question-text { font-weight: 600; margin-bottom: 0.6rem; }
+        .choices { display: grid; grid-template-columns: 1fr; gap: 0.5rem; }
+        .choice {
+            display: flex; align-items: center; gap: 0.6rem;
+            background: #161718; border: 1px solid #2f2f2f; border-radius: 10px; padding: 0.6rem 0.8rem;
+        }
+
+        .badge { font-size: 0.8rem; background: #2a2b2c; color: #9aa0a6; padding: 0.1rem 0.5rem; border-radius: 6px; }
+        .selected { border-color: #ff6b6b; background: #251b1b; }
+        .correct { border-color: #3ddc97; background: #18241e; }
+
+        .explanation { margin-top: 0.6rem; font-size: 0.95rem; color: #cfd3d8; }
+
+        /* Boutons */
+        .actions { display: flex; gap: 0.8rem; margin-top: 1rem; flex-wrap: wrap; }
+        .btn {
             background: linear-gradient(90deg, #444 0%, #222 100%);
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            padding: 0.8rem 2.5rem;
-            font-size: 1.1rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: background 0.2s, transform 0.1s;
-            margin-top: 1rem;
-            text-decoration: none;
-            display: inline-block;
+            color: #fff; border: none; border-radius: 8px;
+            padding: 0.7rem 1.1rem; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.3px;
+            cursor: pointer; transition: background 0.3s, transform 0.2s, box-shadow 0.3s; text-decoration: none;
         }
-        .btn-restart:hover, .btn-restart:focus {
-            background: linear-gradient(90deg, #555 0%, #111 100%);
-            transform: translateY(-2px) scale(1.03);
-        }
-        @media (max-width: 500px) {
-            .result-container {
-                padding: 1.2rem 0.7rem;
-                max-width: 98vw;
-            }
+        .btn:hover { background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%); transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0, 198, 255, 0.35); }
+
+        @media (min-width: 640px) {
+            .choices { grid-template-columns: 1fr 1fr; }
         }
     </style>
 </head>
 <body>
     <div class="result-container">
-        <div class="result-title">Quiz terminé !</div>
-        <div class="result-score">Votre score : {{ score }}/{{ total }}</div>
-        <a href="/" class="btn-restart">Recommencer</a>
+        <div class="header">
+            <div class="result-title">Quiz terminé</div>
+            <div class="result-score">Score: {{ score }}/{{ total }}</div>
+        </div>
+
+        <!-- Barre de progression -->
+        <div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
+
+        <!-- Récapitulatif des erreurs -->
+        <div class="errors-title">Vos erreurs et corrections</div>
+        {% comment %}
+            results: [
+              { question: "...", options: ["A","B","C","D"], selected: 1, correct: 3, explanation: "..." },
+              ...]
+              selected/correct peuvent être index (0-3) ou lettres ("A"-"D") — voir normalisation JS.
+        {% endcomment %}
+
+        {% for item in results %}
+            {% if item.selected != item.correct %}
+            <div class="error-item">
+                <div class="question-text">{{ forloop.counter }}. {{ item.question }}</div>
+
+                <div class="choices">
+                    <div class="choice {% if item.selected == 0 or item.selected == 'A' %}selected{% endif %} {% if item.correct == 0 or item.correct == 'A' %}correct{% endif %}">
+                        <span class="badge">A</span> <span>{{ item.options.0 }}</span>
+                    </div>
+                    <div class="choice {% if item.selected == 1 or item.selected == 'B' %}selected{% endif %} {% if item.correct == 1 or item.correct == 'B' %}correct{% endif %}">
+                        <span class="badge">B</span> <span>{{ item.options.1 }}</span>
+                    </div>
+                    <div class="choice {% if item.selected == 2 or item.selected == 'C' %}selected{% endif %} {% if item.correct == 2 or item.correct == 'C' %}correct{% endif %}">
+                        <span class="badge">C</span> <span>{{ item.options.2 }}</span>
+                    </div>
+                    <div class="choice {% if item.selected == 3 or item.selected == 'D' %}selected{% endif %} {% if item.correct == 3 or item.correct == 'D' %}correct{% endif %}">
+                        <span class="badge">D</span> <span>{{ item.options.3 }}</span>
+                    </div>
+                </div>
+
+                {% if item.explanation %}
+                <div class="explanation"><strong>Pourquoi:</strong> {{ item.explanation }}</div>
+                {% endif %}
+            </div>
+            {% endif %}
+        {% empty %}
+            <div class="error-item">
+                Bravo, aucune erreur ! Continue sur cette lancée 🔥
+            </div>
+        {% endfor %}
+
+        <div class="actions">
+            <a href="{% url 'restart_quiz' %}" class="btn">Recommencer</a>
+
+            <a href="{% url 'quiz_review_all' %}" class="btn">Voir toutes les questions</a>
+        </div>
     </div>
+
+    <script>
+        // Progress bar
+        const score = {{ score|default:0 }};
+        const total = {{ total|default:1 }};
+        const percent = Math.max(0, Math.min(100, (score / total) * 100));
+        document.getElementById('progress').style.width = percent + '%';
+    </script>
 </body>
 </html>
